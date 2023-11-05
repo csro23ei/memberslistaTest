@@ -6,10 +6,9 @@ function showPreviousMembers() {
 
     members.forEach((member) => {
         const li = document.createElement("li");
-        li.textContent = member.name;
+        li.textContent = `Name: ${member.name}, Employee Number: ${member.number}`;
         previousMembersList.appendChild(li);
     });
 }
-
 
 showPreviousMembers();
