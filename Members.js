@@ -1,6 +1,3 @@
-// Funktion för att visa medlemmar
-// Funktion för att visa medlemmar
-// Function for adding a member with a name and employee number
 function addMember() {
     const newMemberNameInput = document.getElementById("newMemberName");
     const newMemberName = newMemberNameInput.value;
@@ -10,19 +7,19 @@ function addMember() {
 
     if (newMemberName.trim() !== "" && newMemberNumber.trim() !== "") {
         const members = JSON.parse(localStorage.getItem("members")) || [];
-        members.push({ name: newMemberName, number: newMemberNumber }); // Include the employee number
+        members.push({ name: newMemberName, number: newMemberNumber });
         localStorage.setItem("members", JSON.stringify(members));
 
-        newMemberNameInput.value = ""; // Clear the name input field
-        newMemberNumberInput.value = ""; // Clear the number input field
+        newMemberNameInput.value = "";
 
-        showMembers(); // Update the displayed members
+
+        showMembers();
     } else {
         alert("Both name and employee number are required.");
     }
 }
 
-// Funktion för att lägga till medlem
+
 function addMember() {
     const newMemberNameInput = document.getElementById("newMemberName");
     const newMemberName = newMemberNameInput.value;
@@ -32,15 +29,15 @@ function addMember() {
         members.push({ name: newMemberName });
         localStorage.setItem("members", JSON.stringify(members));
 
-        newMemberNameInput.value = ""; // Clear the input field
+        newMemberNameInput.value = "";
 
-        showMembers(); // Update the displayed members
+        showMembers();
     }
 }
 
-// Lägg till medlem när knappen klickas
+
 const addMemberButton = document.getElementById("addMemberButton");
 addMemberButton.addEventListener("click", addMember);
 
-// Visa medlemmar och hantera radering när sidan laddas
+
 showMembers();
